@@ -19,7 +19,8 @@ namespace MVC_Plan.Data
                 var team_6 = new Degree[]
                 {
 
-                    new Degree{DegreeID = 2, DegreeAbbrev = "ACS+DB", DegreeName = "MS ACS+DB"},
+                    new Degree{DegreeID=2, DegreeAbbrev="ACS+DB", DegreeName="MS ACS + DB"},
+
 
                 };
                 Console.WriteLine($"New degree {team_6.Length} new degree in inserted");
@@ -105,6 +106,32 @@ namespace MVC_Plan.Data
                 foreach (StudentTerm d in team_6)
                 {
                     context.StudentTerms.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+            //This section is for Student
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Student exists.");
+            }
+            else
+            {
+                var team_6 = new Student[]
+                {
+
+                    new Student{StudentID=533990,FirstName="Hari Priya",LastName="Jupally",bearcatNum=919569151},
+                    new Student{StudentID=531366,FirstName="Bharadwaj",LastName="Dasari",bearcatNum=919559663},
+                    new Student{StudentID=533710,FirstName="Durga Susmitha",LastName="Kotyada",bearcatNum=919570698},
+                    new Student{StudentID=533626,FirstName="Hyndavi",LastName="Musipatla",bearcatNum=919570835},
+                    new Student{StudentID=531383,FirstName="Vyshnavi",LastName="Yalamareddy",bearcatNum=919562271},
+
+
+                };
+                Console.WriteLine($"New degree {team_6.Length} new degree in inserted");
+                foreach (Student d in team_6)
+                {
+                    context.Students.Add(d);
                 }
                 context.SaveChanges();
             }
