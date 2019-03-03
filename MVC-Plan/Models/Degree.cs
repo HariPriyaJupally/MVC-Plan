@@ -13,7 +13,7 @@ namespace MVC_Plan.Models
         public int DegreeID { get; set; }
         [Required]
         [MaxLength(20)]
-        public string DegreeAbbreviation { get; set; }
+        public string DegreeAbbrev { get; set; }
         [Required]
         [MaxLength(40)]
         public string DegreeName { get; set; } 
