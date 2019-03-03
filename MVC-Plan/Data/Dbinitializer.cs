@@ -173,6 +173,39 @@ namespace MVC_Plan.Data
             }
             //END HERE
 
+            //This section is for DegreePlan
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("DegreePlan exists.");
+            }
+            else
+            {
+                var team_6 = new DegreePlan[]
+                {
+
+                    new DegreePlan{DegreePlanID=12,DegreeID=2,StudentID=533990,DegreePlanAbbrev="No Summer Off",DegreePlanName="No Summer Off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=2,StudentID=533990,DegreePlanAbbrev="Summer Off",DegreePlanName="Summer Off"},
+                    new DegreePlan{DegreePlanID=12,DegreeID=2,StudentID=531366,DegreePlanAbbrev="No Summer Off",DegreePlanName="No Summer Off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=2,StudentID=531366,DegreePlanAbbrev="Summer Off",DegreePlanName="Summer Off"},
+                    new DegreePlan{DegreePlanID=12,DegreeID=2,StudentID=533710,DegreePlanAbbrev="No Summer Off",DegreePlanName="No Summer Off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=2,StudentID=533710,DegreePlanAbbrev="Summer Off",DegreePlanName="Summer Off"},
+                    new DegreePlan{DegreePlanID=12,DegreeID=2,StudentID=533626,DegreePlanAbbrev="No Summer Off",DegreePlanName="No Summer Off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=2,StudentID=533626,DegreePlanAbbrev="Summer Off",DegreePlanName="Summer Off"},
+                    new DegreePlan{DegreePlanID=12,DegreeID=2,StudentID=531383,DegreePlanAbbrev="No Summer Off",DegreePlanName="No Summer Off"},
+                    new DegreePlan{DegreePlanID=13,DegreeID=2,StudentID=531383,DegreePlanAbbrev="Summer Off",DegreePlanName="Summer Off"},
+
+
+
+                };
+                Console.WriteLine($"New student {team_6.Length} new student in inserted");
+                foreach (DegreePlan d in team_6)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
         }
     }
 }
