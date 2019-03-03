@@ -200,7 +200,54 @@ namespace MVC_Plan.Data
                 Console.WriteLine($"New student {team_6.Length} new student in inserted");
                 foreach (DegreePlan d in team_6)
                 {
-                    context.Students.Add(d);
+                    context.DegreePlans.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            //This section is for DegreePlanTermRequirement
+            if (context.DegreePlanTermRequirements.Any())
+            {
+                Console.WriteLine("DegreePlanTermRequirement exists.");
+            }
+            else
+            {
+                var team_6 = new DegreePlanTermRequirement[]
+                {
+
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=1,RequirementID=460},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=1,RequirementID=542},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=1,RequirementID=563},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=2,RequirementID=560},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=2,RequirementID=555},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=2,RequirementID=618},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=3,RequirementID=1},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=3,RequirementID=664},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=3,RequirementID=10},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=4,RequirementID=20},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=4,RequirementID=691},
+                    new DegreePlanTermRequirement{DegreePlanID=12,TermID=4,RequirementID=692},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=1,RequirementID=460},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=1,RequirementID=542},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=1,RequirementID=563},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=2,RequirementID=560},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=2,RequirementID=555},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=2,RequirementID=618},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=4,RequirementID=1},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=4,RequirementID=664},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=4,RequirementID=10},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=5,RequirementID=20},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=5,RequirementID=691},
+                    new DegreePlanTermRequirement{DegreePlanID=13,TermID=5,RequirementID=692},
+
+
+
+                };
+                Console.WriteLine($"New DegreePlanTermRequirement {team_6.Length} new DegreePlanTermRequirement in inserted");
+                foreach (DegreePlanTermRequirement d in team_6)
+                {
+                    context.DegreePlanTermRequirements.Add(d);
                 }
                 context.SaveChanges();
             }
