@@ -54,10 +54,10 @@ namespace MVC_Plan.Data
                     new Requirement{ RequirementID= 691,RequirementAbbrev= "GDP1",RequirementName = "GDP1"},
                     new Requirement{ RequirementID= 692,RequirementAbbrev= "GDP2",RequirementName = "GDP2"},
 
-                    //new Degree{DegreeID = 2, DegreeAbbrev = "ACS+DB", DegreeName = "MS ACS+DB"},
+                   
 
                 };
-                Console.WriteLine($"New degree {team_6.Length} new degree in inserted");
+                Console.WriteLine($"New requirement {team_6.Length} new requirement in inserted");
                 foreach (Requirement d in team_6)
                 {
                     context.Requirements.Add(d);
@@ -102,7 +102,7 @@ namespace MVC_Plan.Data
                         new StudentTerm{StudentTermId=5,StudentID=531383,TermID=5,TermName="Spring 2019"},
 
                 };
-                Console.WriteLine($"New degree {team_6.Length} new studentTerm in inserted");
+                Console.WriteLine($"New studentTerm {team_6.Length} new studentTerm in inserted");
                 foreach (StudentTerm d in team_6)
                 {
                     context.StudentTerms.Add(d);
@@ -128,10 +128,46 @@ namespace MVC_Plan.Data
 
 
                 };
-                Console.WriteLine($"New degree {team_6.Length} new degree in inserted");
+                Console.WriteLine($"New student {team_6.Length} new student in inserted");
                 foreach (Student d in team_6)
                 {
                     context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            //This section is for DegreeRequirement
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("DegreeRequirement exists.");
+            }
+            else
+            {
+                var team_6 = new DegreeRequirement[]
+                {
+
+                    new DegreeRequirement{DegreeRequirementID=1,DegreeID=2,RequirementID=460},
+                    new DegreeRequirement{DegreeRequirementID=2,DegreeID=2,RequirementID=542},
+                    new DegreeRequirement{DegreeRequirementID=3,DegreeID=2,RequirementID=563},
+                    new DegreeRequirement{DegreeRequirementID=4,DegreeID=2,RequirementID=560},
+                    new DegreeRequirement{DegreeRequirementID=5,DegreeID=2,RequirementID=555},
+                    new DegreeRequirement{DegreeRequirementID=6,DegreeID=2,RequirementID=618},
+                    new DegreeRequirement{DegreeRequirementID=7,DegreeID=2,RequirementID=1},
+                    new DegreeRequirement{DegreeRequirementID=8,DegreeID=2,RequirementID=664},
+                    new DegreeRequirement{DegreeRequirementID=9,DegreeID=2,RequirementID=10},
+                    new DegreeRequirement{DegreeRequirementID=10,DegreeID=2,RequirementID=20},
+                    new DegreeRequirement{DegreeRequirementID=11,DegreeID=2,RequirementID=691},
+                    new DegreeRequirement{DegreeRequirementID=12,DegreeID=2,RequirementID=692},
+
+
+
+
+                };
+                Console.WriteLine($"New degreeRequirement {team_6.Length} new degreeRequirement in inserted");
+                foreach (DegreeRequirement d in team_6)
+                {
+                    context.DegreeRequirements.Add(d);
                 }
                 context.SaveChanges();
             }
