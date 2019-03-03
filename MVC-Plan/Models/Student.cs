@@ -20,7 +20,7 @@ namespace MVC_Plan.Models
         [Required]
         [MaxLength(9)]
         [MinLength(9)]
-        public int NineOneNine { get; set; }
+        public int bearcatNum { get; set; }
 
     }
 }
