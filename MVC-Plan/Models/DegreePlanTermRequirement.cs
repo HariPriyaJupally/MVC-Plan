@@ -7,7 +7,7 @@ namespace MVC_Plan.Models
 {
     public class DegreePlanTermRequirement
     {
-        public int DegreePlanID { get; set; }
+        public int DegreePlanTermRequirementID { get; set; }
 
         public int TermID { get; set; }
 
