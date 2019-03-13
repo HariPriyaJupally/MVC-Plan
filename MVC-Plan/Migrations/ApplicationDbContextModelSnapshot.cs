@@ -38,9 +38,7 @@ namespace MVC_Plan.Migrations
 
             modelBuilder.Entity("MVC_Plan.Models.DegreePlan", b =>
                 {
-                    b.Property<int>("DegreePlanID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreePlanID");
 
                     b.Property<int>("DegreeID");
 
@@ -57,9 +55,7 @@ namespace MVC_Plan.Migrations
 
             modelBuilder.Entity("MVC_Plan.Models.DegreePlanTermRequirement", b =>
                 {
-                    b.Property<int>("DegreePlanTermRequirementID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreePlanTermRequirementID");
 
                     b.Property<int>("RequirementID");
 
@@ -72,9 +68,7 @@ namespace MVC_Plan.Migrations
 
             modelBuilder.Entity("MVC_Plan.Models.DegreeRequirement", b =>
                 {
-                    b.Property<int>("DegreeRequirementID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreeRequirementID");
 
                     b.Property<int>("DegreeID");
 
@@ -87,9 +81,7 @@ namespace MVC_Plan.Migrations
 
             modelBuilder.Entity("MVC_Plan.Models.Requirement", b =>
                 {
-                    b.Property<int>("RequirementID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("RequirementID");
 
                     b.Property<string>("RequirementAbbrev");
 
