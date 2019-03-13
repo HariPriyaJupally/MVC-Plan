@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MVC-Plan"
+    "\\MVC-Plan",
+    "\\MVC-Plan\\Controllers",
+    "\\MVC-Plan\\Data",
+    "\\MVC-Plan\\Migrations",
+    "\\MVC-Plan\\Models",
+    "\\MVC-Plan\\obj",
+    "\\MVC-Plan\\Views",
+    "\\tests"
   ],
-  "SelectedNode": "\\MVC-Plan.sln",
+  "SelectedNode": "\\MVC-Plan\\Views",
   "PreviewInSolutionExplorer": false
 }
