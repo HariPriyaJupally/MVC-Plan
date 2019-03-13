@@ -31,7 +31,7 @@ namespace MVC_Plan
                     logger.LogError(ex, "An error occured while seeding the database.");
                 }
             }
-            //CreateWebHostBuilder(args).Build().Run();
+            ////CreateWebHostBuilder(args).Build().Run();
             host.Run();
         }
 
