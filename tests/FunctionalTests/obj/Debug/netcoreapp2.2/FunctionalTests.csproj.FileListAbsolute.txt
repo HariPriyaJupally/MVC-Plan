@@ -6,7 +6,6 @@ C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\bin\Debug\netcor
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\bin\Debug\netcoreapp2.2\FunctionalTests.runtimeconfig.dev.json
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\bin\Debug\netcoreapp2.2\FunctionalTests.dll
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\bin\Debug\netcoreapp2.2\FunctionalTests.pdb
-C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.csprojAssemblyReference.cache
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.csproj.CoreCompileInputs.cache
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.AssemblyInfoInputs.cache
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.AssemblyInfo.cs
