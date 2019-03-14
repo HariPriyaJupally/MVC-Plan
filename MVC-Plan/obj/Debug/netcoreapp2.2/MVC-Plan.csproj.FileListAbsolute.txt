@@ -126,12 +126,10 @@ C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Details.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Edit.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Index.g.cshtml.cs
-<<<<<<< HEAD
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\StudentTerms\Create.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\StudentTerms\Delete.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\StudentTerms\Details.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\StudentTerms\Edit.g.cshtml.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\StudentTerms\Index.g.cshtml.cs
-=======
 >>>>>>> 2332d46cf3a3b670387b3b0b0fbcf8d45ad8339a
 >>>>>>> d1237adc0f3d85469c909483f6ee2be03af99a2a

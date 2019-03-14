@@ -9,7 +9,6 @@ namespace MVC_Plan.Models
     public class DegreePlanTermRequirement
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-
         public int DegreePlanTermRequirementID { get; set; }
 
         public int TermID { get; set; }

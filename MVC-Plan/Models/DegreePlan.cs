@@ -9,7 +9,6 @@ namespace MVC_Plan.Models
     public class DegreePlan
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-
         public int DegreePlanID { get; set; }
 
         public int DegreeID { get; set; }
