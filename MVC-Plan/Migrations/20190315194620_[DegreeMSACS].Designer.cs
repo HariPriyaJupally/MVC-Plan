@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Plan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190314021331_IntialCreate")]
-    partial class IntialCreate
+    [Migration("20190315194620_[DegreeMSACS]")]
+    partial class DegreeMSACS
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -106,8 +106,9 @@ namespace MVC_Plan.Migrations
 
                     b.Property<int?>("StudentTermId");
 
-                    b.Property<int>("bearcatNum")
-                        .HasMaxLength(9);
+                    b.Property<string>("bearcatNum")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
                     b.HasKey("StudentID");
 

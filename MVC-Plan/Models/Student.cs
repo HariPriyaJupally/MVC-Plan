@@ -18,9 +18,8 @@ namespace MVC_Plan.Models
         [Required]
         public String LastName { get; set; }
         [Required]
-        [MaxLength(9)]
-        [MinLength(9)]
-        public int bearcatNum { get; set; }
+        [StringLength(20)]
+        public string bearcatNum { get; set; }
 
     }
 }

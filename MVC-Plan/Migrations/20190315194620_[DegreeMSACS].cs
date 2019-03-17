@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVC_Plan.Migrations
 {
-    public partial class IntialCreate : Migration
+    public partial class DegreeMSACS : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -241,7 +241,7 @@ namespace MVC_Plan.Migrations
                     StudentID = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
-                    bearcatNum = table.Column<int>(maxLength: 9, nullable: false),
+                    bearcatNum = table.Column<string>(maxLength: 20, nullable: false),
                     StudentTermId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

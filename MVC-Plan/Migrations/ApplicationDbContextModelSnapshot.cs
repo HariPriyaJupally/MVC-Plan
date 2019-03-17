@@ -104,8 +104,9 @@ namespace MVC_Plan.Migrations
 
                     b.Property<int?>("StudentTermId");
 
-                    b.Property<int>("bearcatNum")
-                        .HasMaxLength(9);
+                    b.Property<string>("bearcatNum")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
                     b.HasKey("StudentID");
 
