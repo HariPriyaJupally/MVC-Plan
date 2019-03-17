@@ -11,4 +11,3 @@ C:\Users\S533990\Documents\44663\MVC-Plan\tests\UnitTests\obj\Debug\netcoreapp2.
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.AssemblyInfo.cs
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.dll
 C:\Users\S533990\Documents\44663\MVC-Plan\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.pdb
-C:\Users\S533990\Documents\44663\MVC-Plan\tests\UnitTests\obj\Debug\netcoreapp2.2\UnitTests.csprojAssemblyReference.cache
