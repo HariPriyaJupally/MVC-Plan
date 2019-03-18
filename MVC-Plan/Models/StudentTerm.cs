@@ -21,7 +21,7 @@ namespace MVC_Plan.Models
         public String TermName { get; set; }
         [Required]
         [MaxLength(10)]
-       
-        public ICollection<Student> Students { get; set; }
+
+        public Student Student { get; set; }
     }
 }

@@ -18,5 +18,9 @@ namespace MVC_Plan.Models
         public String DegreePlanAbbrev { get; set; }
 
         public String DegreePlanName { get; set; }
+
+
+        public Degree Degree { get; set; }
+        public Student Student { get; set; }    
     }
 }

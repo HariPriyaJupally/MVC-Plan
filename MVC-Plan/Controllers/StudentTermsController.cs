@@ -20,10 +20,46 @@ namespace MVC_Plan.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.StudentTerms.ToListAsync());
+            ViewData["StudentIDSortParm"] = sortOrder == "StudentID" ? "studentID_desc" : "";
+            ViewData["TermLabelSortParm"] = String.IsNullOrEmpty(sortOrder) ? "termLabel_desc" : "TermLabel";
+            ViewData["TermIDSortParm"] = sortOrder == "TermId" ? "termID_desc" : "TermID";
+            ViewData["currentFilter"] = searchString;
+
+            var studentTerm = from s in _context.StudentTerms
+                              select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentTerm = studentTerm.Where(s => s.StudentID == Convert.ToInt32(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "studentID_desc":
+                    studentTerm = studentTerm.OrderByDescending(s => s.StudentID);
+                    break;
+                case "TermLabel":
+                    studentTerm = studentTerm.OrderBy(s => s.TermName);
+                    break;
+                case "termLabel_desc":
+                    studentTerm = studentTerm.OrderByDescending(s => s.TermName);
+                    break;
+                case "TermID":
+                    studentTerm = studentTerm.OrderBy(s => s.TermID);
+                    break;
+                case "termID_desc":
+                    studentTerm = studentTerm.OrderByDescending(s => s.TermID);
+                    break;
+                default:
+                    studentTerm = studentTerm.OrderBy(s => s.StudentID);
+                    break;
+            }
+
+            return View(await studentTerm.AsNoTracking().ToListAsync());
         }
+
 
         // GET: StudentTerms/Details/5
         public async Task<IActionResult> Details(int? id)

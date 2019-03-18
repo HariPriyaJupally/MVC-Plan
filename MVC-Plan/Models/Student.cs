@@ -21,5 +21,8 @@ namespace MVC_Plan.Models
         [StringLength(20)]
         public string bearcatNum { get; set; }
 
+
+        public ICollection<DegreePlan> DegreePlans { get; set; }
+        public ICollection<StudentTerm> StudentTerms { get; set; }
     }
 }
