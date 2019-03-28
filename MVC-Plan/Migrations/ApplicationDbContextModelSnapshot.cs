@@ -15,7 +15,7 @@ namespace MVC_Plan.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
+                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -50,6 +50,10 @@ namespace MVC_Plan.Migrations
 
                     b.HasKey("DegreePlanID");
 
+                    b.HasIndex("DegreeID");
+
+                    b.HasIndex("StudentID");
+
                     b.ToTable("DegreePlans");
                 });
 
@@ -57,11 +61,17 @@ namespace MVC_Plan.Migrations
                 {
                     b.Property<int>("DegreePlanTermRequirementID");
 
+                    b.Property<int>("DegreePlanID");
+
                     b.Property<int>("RequirementID");
 
                     b.Property<int>("TermID");
 
                     b.HasKey("DegreePlanTermRequirementID");
+
+                    b.HasIndex("DegreePlanID");
+
+                    b.HasIndex("RequirementID");
 
                     b.ToTable("DegreePlanTermRequirements");
                 });
@@ -75,6 +85,10 @@ namespace MVC_Plan.Migrations
                     b.Property<int>("RequirementID");
 
                     b.HasKey("DegreeRequirementID");
+
+                    b.HasIndex("DegreeID");
+
+                    b.HasIndex("RequirementID");
 
                     b.ToTable("DegreeRequirements");
                 });
@@ -102,15 +116,11 @@ namespace MVC_Plan.Migrations
                     b.Property<string>("LastName")
                         .IsRequired();
 
-                    b.Property<int?>("StudentTermId");
-
                     b.Property<string>("bearcatNum")
                         .IsRequired()
                         .HasMaxLength(20);
 
                     b.HasKey("StudentID");
-
-                    b.HasIndex("StudentTermId");
 
                     b.ToTable("Students");
                 });
@@ -128,6 +138,8 @@ namespace MVC_Plan.Migrations
                         .HasMaxLength(20);
 
                     b.HasKey("StudentTermId");
+
+                    b.HasIndex("StudentID");
 
                     b.ToTable("StudentTerms");
                 });
@@ -297,11 +309,51 @@ namespace MVC_Plan.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MVC_Plan.Models.Student", b =>
+            modelBuilder.Entity("MVC_Plan.Models.DegreePlan", b =>
                 {
-                    b.HasOne("MVC_Plan.Models.StudentTerm")
-                        .WithMany("Students")
-                        .HasForeignKey("StudentTermId");
+                    b.HasOne("MVC_Plan.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MVC_Plan.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MVC_Plan.Models.DegreePlanTermRequirement", b =>
+                {
+                    b.HasOne("MVC_Plan.Models.DegreePlan", "DegreePlan")
+                        .WithMany()
+                        .HasForeignKey("DegreePlanID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MVC_Plan.Models.Requirement", "Requirement")
+                        .WithMany()
+                        .HasForeignKey("RequirementID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MVC_Plan.Models.DegreeRequirement", b =>
+                {
+                    b.HasOne("MVC_Plan.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MVC_Plan.Models.Requirement", "Requirement")
+                        .WithMany()
+                        .HasForeignKey("RequirementID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MVC_Plan.Models.StudentTerm", b =>
+                {
+                    b.HasOne("MVC_Plan.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

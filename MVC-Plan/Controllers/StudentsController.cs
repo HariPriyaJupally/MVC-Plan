@@ -24,8 +24,8 @@ namespace MVC_Plan.Controllers
         {
             ViewData["FirstNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "firstName_desc" : "";
             ViewData["LastNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "lastName_desc" : "LastName";
-            ViewData["SNumberSortParm"] = sortOrder == "Snumber" ? "snumber_desc" : "SNumber";
-            ViewData["SIDSortParm"] = sortOrder == "SId" ? "sid_desc" : "SID";
+            ViewData["bearcatNumSortParm"] = sortOrder == "bearcatNum" ? "bearcatNum" : "bearcatNum";
+            ViewData["StudentIDSortParm"] = sortOrder == "StudentID" ? "studentID_desc" : "StudentID";
             ViewData["currentFilter"] = searchString;
 
             var student = from s in _context.Students

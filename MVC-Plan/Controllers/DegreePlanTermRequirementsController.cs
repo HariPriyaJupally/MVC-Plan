@@ -23,7 +23,7 @@ namespace MVC_Plan.Controllers
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
 
-            ViewData["TermIDSortParm"] = sortOrder == "Term" ? "termId_desc" : "";
+            ViewData["TermIDSortParm"] = sortOrder == "Term" ? "termID_desc" : "";
             ViewData["DegreePlanSortParm"] = sortOrder == "DegreePlan" ? "degreePlan_desc" : "DegreePlan";
             ViewData["RequirementSortParm"] = sortOrder == "Requirement" ? "requirement_desc" : "Requirement";
             ViewData["currentFilter"] = searchString;

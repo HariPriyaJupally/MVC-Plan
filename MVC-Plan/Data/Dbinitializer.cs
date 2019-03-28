@@ -65,7 +65,71 @@ namespace MVC_Plan.Data
                 context.SaveChanges();
             }
             //END HERE
-  //This section is for Student Term
+
+            //This section is for DegreeRequirement
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("DegreeRequirement exists.");
+            }
+            else
+            {
+                var team_6 = new DegreeRequirement[]
+                {
+
+                    new DegreeRequirement{DegreeRequirementID=1,DegreeID=2,RequirementID=460},
+                    new DegreeRequirement{DegreeRequirementID=2,DegreeID=2,RequirementID=542},
+                    new DegreeRequirement{DegreeRequirementID=3,DegreeID=2,RequirementID=563},
+                    new DegreeRequirement{DegreeRequirementID=4,DegreeID=2,RequirementID=560},
+                    new DegreeRequirement{DegreeRequirementID=5,DegreeID=2,RequirementID=555},
+                    new DegreeRequirement{DegreeRequirementID=6,DegreeID=2,RequirementID=618},
+                    new DegreeRequirement{DegreeRequirementID=7,DegreeID=2,RequirementID=1},
+                    new DegreeRequirement{DegreeRequirementID=8,DegreeID=2,RequirementID=664},
+                    new DegreeRequirement{DegreeRequirementID=9,DegreeID=2,RequirementID=10},
+                    new DegreeRequirement{DegreeRequirementID=10,DegreeID=2,RequirementID=20},
+                    new DegreeRequirement{DegreeRequirementID=11,DegreeID=2,RequirementID=691},
+                    new DegreeRequirement{DegreeRequirementID=12,DegreeID=2,RequirementID=692},
+
+
+
+
+                };
+                Console.WriteLine($"New degreeRequirement {team_6.Length} new degreeRequirement in inserted");
+                foreach (DegreeRequirement d in team_6)
+                {
+                    context.DegreeRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            //This section is for Student
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Student exists.");
+            }
+            else
+            {
+                var team_6 = new Student[]
+                {
+
+                    new Student{StudentID=533990,FirstName="Hari Priya",LastName="Jupally",bearcatNum="919569151"},
+                    new Student{StudentID=531366,FirstName="Bharadwaj",LastName="Dasari",bearcatNum="919559663"},
+                    new Student{StudentID=533710,FirstName="Durga Susmitha",LastName="Kotyada",bearcatNum="919570698"},
+                    new Student{StudentID=533626,FirstName="Hyndavi",LastName="Musipatla",bearcatNum="919570835"},
+                    new Student{StudentID=531383,FirstName="Vyshnavi",LastName="Yalamareddy",bearcatNum="919562271"},
+
+
+                };
+                Console.WriteLine($"New student {team_6.Length} new student in inserted");
+                foreach (Student d in team_6)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            //This section is for Student Term
             if (context.StudentTerms.Any())
             {
                 Console.WriteLine("StudentTerm exists.");
@@ -106,68 +170,6 @@ namespace MVC_Plan.Data
                 foreach (StudentTerm d in team_6)
                 {
                     context.StudentTerms.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //END HERE
-            //This section is for Student
-            if (context.Students.Any())
-            {
-                Console.WriteLine("Student exists.");
-            }
-            else
-            {
-                var team_6 = new Student[]
-                {
-
-                    new Student{StudentID=533990,FirstName="Hari Priya",LastName="Jupally",bearcatNum="919569151"},
-                    new Student{StudentID=531366,FirstName="Bharadwaj",LastName="Dasari",bearcatNum="919559663"},
-                    new Student{StudentID=533710,FirstName="Durga Susmitha",LastName="Kotyada",bearcatNum="919570698"},
-                    new Student{StudentID=533626,FirstName="Hyndavi",LastName="Musipatla",bearcatNum="919570835"},
-                    new Student{StudentID=531383,FirstName="Vyshnavi",LastName="Yalamareddy",bearcatNum="919562271"},
-
-
-                };
-                Console.WriteLine($"New student {team_6.Length} new student in inserted");
-                foreach (Student d in team_6)
-                {
-                    context.Students.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //END HERE
-
-            //This section is for DegreeRequirement
-            if (context.DegreeRequirements.Any())
-            {
-                Console.WriteLine("DegreeRequirement exists.");
-            }
-            else
-            {
-                var team_6 = new DegreeRequirement[]
-                {
-
-                    new DegreeRequirement{DegreeRequirementID=1,DegreeID=2,RequirementID=460},
-                    new DegreeRequirement{DegreeRequirementID=2,DegreeID=2,RequirementID=542},
-                    new DegreeRequirement{DegreeRequirementID=3,DegreeID=2,RequirementID=563},
-                    new DegreeRequirement{DegreeRequirementID=4,DegreeID=2,RequirementID=560},
-                    new DegreeRequirement{DegreeRequirementID=5,DegreeID=2,RequirementID=555},
-                    new DegreeRequirement{DegreeRequirementID=6,DegreeID=2,RequirementID=618},
-                    new DegreeRequirement{DegreeRequirementID=7,DegreeID=2,RequirementID=1},
-                    new DegreeRequirement{DegreeRequirementID=8,DegreeID=2,RequirementID=664},
-                    new DegreeRequirement{DegreeRequirementID=9,DegreeID=2,RequirementID=10},
-                    new DegreeRequirement{DegreeRequirementID=10,DegreeID=2,RequirementID=20},
-                    new DegreeRequirement{DegreeRequirementID=11,DegreeID=2,RequirementID=691},
-                    new DegreeRequirement{DegreeRequirementID=12,DegreeID=2,RequirementID=692},
-
-
-
-
-                };
-                Console.WriteLine($"New degreeRequirement {team_6.Length} new degreeRequirement in inserted");
-                foreach (DegreeRequirement d in team_6)
-                {
-                    context.DegreeRequirements.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -252,6 +254,19 @@ namespace MVC_Plan.Data
                 context.SaveChanges();
             }
             //END HERE
+
+            
+
+          
+
+          
+         
+
+           
+
+            
+
+           
 
         }
     }
