@@ -1,9 +1,9 @@
 ## Developers List:
-* Bharadwaj Dasari
-* Hari Priya Jupally
-* Durga Susmitha Kotyada
-* Hyndavi Musipatla
-* Vyshnavi Yalamareddy
+* Bharadwaj Dasari.
+* Hari Priya Jupally.
+* Durga Susmitha Kotyada.
+* Hyndavi Musipatla.
+* Vyshnavi Yalamareddy.
 
 ## How to clone,intialize and running the app locally
 * Copy repo link completely and git clone in your local machine.
