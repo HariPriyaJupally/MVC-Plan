@@ -34,28 +34,40 @@
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["SIDSortParm"]">@Html.DisplayNameFor(model => model.StudentID)</a>
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Done)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.bearcatNum)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bearcatNum)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Done)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

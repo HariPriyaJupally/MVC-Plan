@@ -96,7 +96,7 @@ namespace MVC_Plan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,FirstName,LastName,bearcatNum")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentID,FirstName,LastName,bearcatNum, Done")] Student student)
         {
             if (ModelState.IsValid)
             {

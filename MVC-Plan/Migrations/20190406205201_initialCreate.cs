@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVC_Plan.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,7 +53,8 @@ namespace MVC_Plan.Migrations
                 {
                     DegreeID = table.Column<int>(nullable: false),
                     DegreeAbbrev = table.Column<string>(maxLength: 20, nullable: false),
-                    DegreeName = table.Column<string>(maxLength: 40, nullable: false)
+                    DegreeName = table.Column<string>(maxLength: 40, nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,7 +81,8 @@ namespace MVC_Plan.Migrations
                     StudentID = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
-                    bearcatNum = table.Column<string>(maxLength: 20, nullable: false)
+                    bearcatNum = table.Column<string>(maxLength: 20, nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

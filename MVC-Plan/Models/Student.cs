@@ -20,7 +20,7 @@ namespace MVC_Plan.Models
         [Required]
         [StringLength(20)]
         public string bearcatNum { get; set; }
-
+        public bool Done { get; set; }
 
     }
 }

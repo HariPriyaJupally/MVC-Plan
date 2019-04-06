@@ -31,6 +31,8 @@ namespace MVC_Plan.Migrations
                         .IsRequired()
                         .HasMaxLength(40);
 
+                    b.Property<bool>("Done");
+
                     b.HasKey("DegreeID");
 
                     b.ToTable("Degree");
@@ -109,6 +111,8 @@ namespace MVC_Plan.Migrations
             modelBuilder.Entity("MVC_Plan.Models.Student", b =>
                 {
                     b.Property<int>("StudentID");
+
+                    b.Property<bool>("Done");
 
                     b.Property<string>("FirstName")
                         .IsRequired();

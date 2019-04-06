@@ -16,7 +16,7 @@ namespace MVC_Plan.Models
         public string DegreeAbbrev { get; set; }
         [Required]
         [MaxLength(40)]
-        public string DegreeName { get; set; } 
-
+        public string DegreeName { get; set; }
+        public bool Done { get; set; }
     }
 }

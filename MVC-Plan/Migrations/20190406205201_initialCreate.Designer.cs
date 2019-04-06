@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Plan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190406194835_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190406205201_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,8 @@ namespace MVC_Plan.Migrations
                     b.Property<string>("DegreeName")
                         .IsRequired()
                         .HasMaxLength(40);
+
+                    b.Property<bool>("Done");
 
                     b.HasKey("DegreeID");
 
@@ -111,6 +113,8 @@ namespace MVC_Plan.Migrations
             modelBuilder.Entity("MVC_Plan.Models.Student", b =>
                 {
                     b.Property<int>("StudentID");
+
+                    b.Property<bool>("Done");
 
                     b.Property<string>("FirstName")
                         .IsRequired();
