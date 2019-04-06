@@ -31,4 +31,9 @@ https://github.com/HariPriyaJupally/MVC-Plan/issues?q=is%3Aissue+is%3Aclosed
 | Billing rate           | $ 182  |
 | No of developers       | 5      |
 | Hours per developer    | 180    |
+<<<<<<< HEAD
 | Percent of total value | 65%    |
+=======
+| Percent of total value | 65%    |
+hello
+>>>>>>> feb11c8fad2b8046fe2c8c93eb685fea2282b98a
