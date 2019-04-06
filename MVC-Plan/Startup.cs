@@ -41,14 +41,14 @@ namespace MVC_Plan
 
             // Use SQL Database if in Azure, otherwise, use SQLite
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-                services.AddDbContext<MyDatabaseContext>(options =>
+                services.AddDbContext<ApplicationDbContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             else
-                services.AddDbContext<MyDatabaseContext>(options =>
-                        options.UseSqlite("Data Source=localdatabase.db"));
+                services.AddDbContext<ApplicationDbContext>(options =>
+                        options.UseSqlServer("Data Source=localdatabase.db"));
 
             // Automatically perform database migration
-            services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
