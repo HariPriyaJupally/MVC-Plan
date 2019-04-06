@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using MVC_Plan.Data;
+using StudentPlan;
 
 namespace MVC_Plan
 {

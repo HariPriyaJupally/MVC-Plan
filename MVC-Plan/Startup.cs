@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_Plan.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
-namespace MVC_Plan
+namespace StudentPlan
 {
     public class Startup
     {
@@ -34,28 +30,23 @@ namespace MVC_Plan
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            // services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(
-            //       Configuration.GetConnectionString("DefaultConnection")));
-
-            // Use SQL Database if in Azure, otherwise, use SQLite
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            }
             else
+            {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                        options.UseSqlServer("Data Source=localdatabase.db"));
-
-            // Automatically perform database migration
+                    options.UseSqlServer(
+                        Configuration.GetConnectionString("DefaultConnection")));
+                services.AddDefaultIdentity<IdentityUser>()
+                    .AddDefaultUI(UIFramework.Bootstrap4)
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+            }
             services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
-
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
