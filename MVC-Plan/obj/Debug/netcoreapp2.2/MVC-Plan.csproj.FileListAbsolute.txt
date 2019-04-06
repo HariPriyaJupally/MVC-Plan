@@ -199,3 +199,11 @@ C:\Users\S531366\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-P
 C:\Users\S531366\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.RazorTargetAssemblyInfo.cs
 C:\Users\S531366\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.Views.pdb
 C:\Users\S531366\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.csproj.CopyComplete
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.csprojAssemblyReference.cache
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.csproj.CoreCompileInputs.cache
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.RazorAssemblyInfo.cache
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.RazorAssemblyInfo.cs
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.AssemblyInfoInputs.cache
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.AssemblyInfo.cs
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.dll
+C:\Users\S533710\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.pdb
