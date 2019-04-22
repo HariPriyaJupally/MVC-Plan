@@ -20,38 +20,10 @@ namespace MVC_Plan.Controllers
         }
 
         // GET: DegreeRequirements
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        public async Task<IActionResult> Index()
         {
-
-            ViewData["DegreeIDSortParm"] = sortOrder == "DegreeID" ? "degreeId_desc" : "";
-            ViewData["RequirementIDSortParm"] = sortOrder == "Requirement" ? "requirement_desc" : "Requirement";
-            ViewData["currentFilter"] = searchString;
-
-            var degreeRequirement = from s in _context.DegreeRequirements.Include(d => d.Degree).Include(d => d.Requirement)
-                                    select s;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                degreeRequirement = degreeRequirement.Where(s => s.DegreeID == Convert.ToInt32(searchString));
-            }
-
-            switch (sortOrder)
-            {
-                case "degreeId_desc":
-                    degreeRequirement = degreeRequirement.OrderByDescending(s => s.DegreeID);
-                    break;
-                case "Requirement":
-                    degreeRequirement = degreeRequirement.OrderBy(s => s.RequirementID);
-                    break;
-                case "requirement_desc":
-                    degreeRequirement = degreeRequirement.OrderByDescending(s => s.RequirementID);
-                    break;
-                default:
-                    degreeRequirement = degreeRequirement.OrderBy(s => s.DegreeID);
-                    break;
-            }
-
-            return View(await degreeRequirement.AsNoTracking().ToListAsync());
+            var applicationDbContext = _context.DegreeRequirements.Include(d => d.Requirement).Include(d => d.StudentTerm);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: DegreeRequirements/Details/5
@@ -63,6 +35,8 @@ namespace MVC_Plan.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Requirement)
+                .Include(d => d.StudentTerm)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementID == id);
             if (degreeRequirement == null)
             {
@@ -75,6 +49,8 @@ namespace MVC_Plan.Controllers
         // GET: DegreeRequirements/Create
         public IActionResult Create()
         {
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "RequirementID");
+            ViewData["StudentTermID"] = new SelectList(_context.StudentTerms, "StudentTermId", "TermName");
             return View();
         }
 
@@ -83,7 +59,7 @@ namespace MVC_Plan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreeRequirementID,DegreeID,RequirementID")] DegreeRequirement degreeRequirement)
+        public async Task<IActionResult> Create([Bind("DegreeRequirementID,StudentTermID,RequirementID")] DegreeRequirement degreeRequirement)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +67,8 @@ namespace MVC_Plan.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "RequirementID", degreeRequirement.RequirementID);
+            ViewData["StudentTermID"] = new SelectList(_context.StudentTerms, "StudentTermId", "TermName", degreeRequirement.StudentTermID);
             return View(degreeRequirement);
         }
 
@@ -107,6 +85,8 @@ namespace MVC_Plan.Controllers
             {
                 return NotFound();
             }
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "RequirementID", degreeRequirement.RequirementID);
+            ViewData["StudentTermID"] = new SelectList(_context.StudentTerms, "StudentTermId", "TermName", degreeRequirement.StudentTermID);
             return View(degreeRequirement);
         }
 
@@ -115,7 +95,7 @@ namespace MVC_Plan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DegreeRequirementID,DegreeID,RequirementID")] DegreeRequirement degreeRequirement)
+        public async Task<IActionResult> Edit(int id, [Bind("DegreeRequirementID,StudentTermID,RequirementID")] DegreeRequirement degreeRequirement)
         {
             if (id != degreeRequirement.DegreeRequirementID)
             {
@@ -142,6 +122,8 @@ namespace MVC_Plan.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["RequirementID"] = new SelectList(_context.Requirements, "RequirementID", "RequirementID", degreeRequirement.RequirementID);
+            ViewData["StudentTermID"] = new SelectList(_context.StudentTerms, "StudentTermId", "TermName", degreeRequirement.StudentTermID);
             return View(degreeRequirement);
         }
 
@@ -154,6 +136,8 @@ namespace MVC_Plan.Controllers
             }
 
             var degreeRequirement = await _context.DegreeRequirements
+                .Include(d => d.Requirement)
+                .Include(d => d.StudentTerm)
                 .FirstOrDefaultAsync(m => m.DegreeRequirementID == id);
             if (degreeRequirement == null)
             {

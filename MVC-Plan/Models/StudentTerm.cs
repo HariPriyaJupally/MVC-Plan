@@ -20,8 +20,14 @@ namespace MVC_Plan.Models
         [MaxLength(20)]
         public String TermName { get; set; }
         [Required]
-        [MaxLength(10)]
+        public int DegreePlanID { get; set; }
 
         public Student Student { get; set; }
+
+
+        public DegreePlan DegreePlan { get; set; }
+
+        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
+
     }
 }

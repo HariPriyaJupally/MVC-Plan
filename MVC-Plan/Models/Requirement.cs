@@ -13,7 +13,15 @@ namespace MVC_Plan.Models
 
         public string  RequirementAbbrev { get; set; }
         
-        public string RequirementName { get; set; }          
-        
+        public string RequirementName { get; set; }
+
+        public int DegreeID { get; set; }
+
+        public Degree Degree { get; set; }
+
+        public int StudentTermId { get; set; }
+
+        public StudentTerm StudentTerm { get; set; }
+
     }
 }

@@ -82,15 +82,19 @@ namespace MVC_Plan.Migrations
                 {
                     b.Property<int>("DegreeRequirementID");
 
-                    b.Property<int>("DegreeID");
+                    b.Property<int?>("DegreeID");
 
                     b.Property<int>("RequirementID");
+
+                    b.Property<int>("StudentTermID");
 
                     b.HasKey("DegreeRequirementID");
 
                     b.HasIndex("DegreeID");
 
                     b.HasIndex("RequirementID");
+
+                    b.HasIndex("StudentTermID");
 
                     b.ToTable("DegreeRequirements");
                 });
@@ -99,11 +103,19 @@ namespace MVC_Plan.Migrations
                 {
                     b.Property<int>("RequirementID");
 
+                    b.Property<int>("DegreeID");
+
                     b.Property<string>("RequirementAbbrev");
 
                     b.Property<string>("RequirementName");
 
+                    b.Property<int>("StudentTermId");
+
                     b.HasKey("RequirementID");
+
+                    b.HasIndex("DegreeID");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("Requirements");
                 });
@@ -133,6 +145,8 @@ namespace MVC_Plan.Migrations
                 {
                     b.Property<int>("StudentTermId");
 
+                    b.Property<int>("DegreePlanID");
+
                     b.Property<int>("StudentID");
 
                     b.Property<int>("TermID");
@@ -142,6 +156,8 @@ namespace MVC_Plan.Migrations
                         .HasMaxLength(20);
 
                     b.HasKey("StudentTermId");
+
+                    b.HasIndex("DegreePlanID");
 
                     b.HasIndex("StudentID");
 
@@ -321,7 +337,7 @@ namespace MVC_Plan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MVC_Plan.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("DegreePlans")
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -341,19 +357,41 @@ namespace MVC_Plan.Migrations
 
             modelBuilder.Entity("MVC_Plan.Models.DegreeRequirement", b =>
                 {
-                    b.HasOne("MVC_Plan.Models.Degree", "Degree")
-                        .WithMany()
-                        .HasForeignKey("DegreeID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("MVC_Plan.Models.Degree")
+                        .WithMany("DegreeRequirements")
+                        .HasForeignKey("DegreeID");
 
                     b.HasOne("MVC_Plan.Models.Requirement", "Requirement")
                         .WithMany()
                         .HasForeignKey("RequirementID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MVC_Plan.Models.StudentTerm", "StudentTerm")
+                        .WithMany("DegreeRequirements")
+                        .HasForeignKey("StudentTermID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MVC_Plan.Models.Requirement", b =>
+                {
+                    b.HasOne("MVC_Plan.Models.Degree", "Degree")
+                        .WithMany("Requirements")
+                        .HasForeignKey("DegreeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MVC_Plan.Models.StudentTerm", "StudentTerm")
+                        .WithMany()
+                        .HasForeignKey("StudentTermId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MVC_Plan.Models.StudentTerm", b =>
                 {
+                    b.HasOne("MVC_Plan.Models.DegreePlan", "DegreePlan")
+                        .WithMany("StudentTerms")
+                        .HasForeignKey("DegreePlanID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("MVC_Plan.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentID")

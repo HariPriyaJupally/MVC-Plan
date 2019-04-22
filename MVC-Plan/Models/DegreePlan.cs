@@ -21,6 +21,9 @@ namespace MVC_Plan.Models
 
 
         public Degree Degree { get; set; }
-        public Student Student { get; set; }    
+        public Student Student { get; set; }
+
+        // each plan has many terms... 
+        public ICollection<StudentTerm> StudentTerms { get; set; }
     }
 }

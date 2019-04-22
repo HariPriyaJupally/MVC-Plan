@@ -31,75 +31,6 @@ namespace MVC_Plan.Data
                 context.SaveChanges();
             }
 
-//This section is for Requirements
-            if (context.Requirements.Any())
-            {
-                Console.WriteLine("Requirement exists.");
-            }
-            else
-            {
-                var team_6 = new Requirement[]
-                {
-
-                    new Requirement{ RequirementID= 460,RequirementAbbrev= "DB",RequirementName = "44-460 Database"},
-                    new Requirement{ RequirementID= 542,RequirementAbbrev= "OOP",RequirementName = "44-542 OOP"},
-                    new Requirement{ RequirementID= 563,RequirementAbbrev= "Web apps",RequirementName = "44-563 Web apps"},
-                    new Requirement{ RequirementID= 560,RequirementAbbrev= "ADB",RequirementName = "44-560 ADB"},
-                    new Requirement{ RequirementID= 555,RequirementAbbrev= "NS",RequirementName = "44-555 Network Security"},
-                    new Requirement{ RequirementID= 618,RequirementAbbrev= "PM",RequirementName = "44-618 PM"},
-                    new Requirement{ RequirementID= 1,RequirementAbbrev= "Mobile",RequirementName = "44-643 or 44-644"},
-                    new Requirement{ RequirementID= 664,RequirementAbbrev= "UXD",RequirementName = "44-664 UXD"},
-                    new Requirement{ RequirementID= 10,RequirementAbbrev= "E1",RequirementName = "Elective 1"},
-                    new Requirement{ RequirementID= 20,RequirementAbbrev= "E2",RequirementName = "Elective 2"},
-                    new Requirement{ RequirementID= 691,RequirementAbbrev= "GDP1",RequirementName = "GDP1"},
-                    new Requirement{ RequirementID= 692,RequirementAbbrev= "GDP2",RequirementName = "GDP2"},
-
-                   
-
-                };
-                Console.WriteLine($"New requirement {team_6.Length} new requirement in inserted");
-                foreach (Requirement d in team_6)
-                {
-                    context.Requirements.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //END HERE
-
-            //This section is for DegreeRequirement
-            if (context.DegreeRequirements.Any())
-            {
-                Console.WriteLine("DegreeRequirement exists.");
-            }
-            else
-            {
-                var team_6 = new DegreeRequirement[]
-                {
-
-                    new DegreeRequirement{DegreeRequirementID=1,DegreeID=2,RequirementID=460},
-                    new DegreeRequirement{DegreeRequirementID=2,DegreeID=2,RequirementID=542},
-                    new DegreeRequirement{DegreeRequirementID=3,DegreeID=2,RequirementID=563},
-                    new DegreeRequirement{DegreeRequirementID=4,DegreeID=2,RequirementID=560},
-                    new DegreeRequirement{DegreeRequirementID=5,DegreeID=2,RequirementID=555},
-                    new DegreeRequirement{DegreeRequirementID=6,DegreeID=2,RequirementID=618},
-                    new DegreeRequirement{DegreeRequirementID=7,DegreeID=2,RequirementID=1},
-                    new DegreeRequirement{DegreeRequirementID=8,DegreeID=2,RequirementID=664},
-                    new DegreeRequirement{DegreeRequirementID=9,DegreeID=2,RequirementID=10},
-                    new DegreeRequirement{DegreeRequirementID=10,DegreeID=2,RequirementID=20},
-                    new DegreeRequirement{DegreeRequirementID=11,DegreeID=2,RequirementID=691},
-                    new DegreeRequirement{DegreeRequirementID=12,DegreeID=2,RequirementID=692},
-
-
-
-
-                };
-                Console.WriteLine($"New degreeRequirement {team_6.Length} new degreeRequirement in inserted");
-                foreach (DegreeRequirement d in team_6)
-                {
-                    context.DegreeRequirements.Add(d);
-                }
-                context.SaveChanges();
-            }
             //END HERE
 
             //This section is for Student
@@ -124,52 +55,6 @@ namespace MVC_Plan.Data
                 foreach (Student d in team_6)
                 {
                     context.Students.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //END HERE
-
-            //This section is for Student Term
-            if (context.StudentTerms.Any())
-            {
-                Console.WriteLine("StudentTerm exists.");
-            }
-            else
-            {
-                var team_6 = new StudentTerm[]
-                {
-
-                   new StudentTerm{StudentTermId=1,StudentID=533990,TermID=1,TermName="Fall 2017"},
-                        new StudentTerm{StudentTermId=2,StudentID=533990,TermID=2,TermName="Spring 2018"},
-                        new StudentTerm{StudentTermId=3,StudentID=533990,TermID=3,TermName="Summer 2018"},
-                        new StudentTerm{StudentTermId=4,StudentID=533990,TermID=4,TermName="Fall 2018"},
-                        new StudentTerm{StudentTermId=5,StudentID=533990,TermID=5,TermName="Spring 2019"},
-                        new StudentTerm{StudentTermId=6,StudentID=531366,TermID=1,TermName="Fall 2017"},
-                        new StudentTerm{StudentTermId=7,StudentID=531366,TermID=2,TermName="Spring 2018"},
-                        new StudentTerm{StudentTermId=8,StudentID=531366,TermID=3,TermName="Summer 2018"},
-                        new StudentTerm{StudentTermId=9,StudentID=531366,TermID=4,TermName="Fall 2018"},
-                        new StudentTerm{StudentTermId=10,StudentID=531366,TermID=5,TermName="Spring 2019"},
-                        new StudentTerm{StudentTermId=11,StudentID=533710,TermID=1,TermName="Fall 2017"},
-                        new StudentTerm{StudentTermId=12,StudentID=533710,TermID=2,TermName="Spring 2018"},
-                        new StudentTerm{StudentTermId=13,StudentID=533710,TermID=3,TermName="Summer 2018"},
-                        new StudentTerm{StudentTermId=14,StudentID=533710,TermID=4,TermName="Fall 2018"},
-                        new StudentTerm{StudentTermId=15,StudentID=533710,TermID=5,TermName="Spring 2019"},
-                        new StudentTerm{StudentTermId=16,StudentID=533626,TermID=1,TermName="Fall 2017"},
-                        new StudentTerm{StudentTermId=17,StudentID=533626,TermID=2,TermName="Spring 2018"},
-                        new StudentTerm{StudentTermId=18,StudentID=533626,TermID=3,TermName="Summer 2018"},
-                        new StudentTerm{StudentTermId=19,StudentID=533626,TermID=4,TermName="Fall 2018"},
-                        new StudentTerm{StudentTermId=20,StudentID=533626,TermID=5,TermName="Spring 2019"},
-                        new StudentTerm{StudentTermId=21,StudentID=531383,TermID=1,TermName="Fall 2017"},
-                        new StudentTerm{StudentTermId=22,StudentID=531383,TermID=2,TermName="Spring 2018"},
-                        new StudentTerm{StudentTermId=23,StudentID=531383,TermID=3,TermName="Summer 2018"},
-                        new StudentTerm{StudentTermId=24,StudentID=531383,TermID=4,TermName="Fall 2018"},
-                        new StudentTerm{StudentTermId=25,StudentID=531383,TermID=5,TermName="Spring 2019"},
-
-                };
-                Console.WriteLine($"New studentTerm {team_6.Length} new studentTerm in inserted");
-                foreach (StudentTerm d in team_6)
-                {
-                    context.StudentTerms.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -207,6 +92,133 @@ namespace MVC_Plan.Data
                 context.SaveChanges();
             }
             //END HERE
+
+
+
+            //This section is for Student Term
+            if (context.StudentTerms.Any())
+            {
+                Console.WriteLine("StudentTerm exists.");
+            }
+            else
+            {
+                var team_6 = new StudentTerm[]
+                {
+
+                   new StudentTerm{StudentTermId=1,StudentID=533990,TermID=1,TermName="Fall 2017", DegreePlanID=1},
+                        new StudentTerm{StudentTermId=2,StudentID=533990,TermID=2,TermName="Spring 2018", DegreePlanID=1},
+                        new StudentTerm{StudentTermId=3,StudentID=533990,TermID=3,TermName="Summer 2018", DegreePlanID=1},
+                        new StudentTerm{StudentTermId=4,StudentID=533990,TermID=4,TermName="Fall 2018", DegreePlanID=1},
+                        new StudentTerm{StudentTermId=5,StudentID=533990,TermID=5,TermName="Spring 2019", DegreePlanID=1},
+                        new StudentTerm{StudentTermId=6,StudentID=531366,TermID=1,TermName="Fall 2017", DegreePlanID=3},
+                        new StudentTerm{StudentTermId=7,StudentID=531366,TermID=2,TermName="Spring 2018", DegreePlanID=3},
+                        new StudentTerm{StudentTermId=8,StudentID=531366,TermID=3,TermName="Summer 2018", DegreePlanID=3},
+                        new StudentTerm{StudentTermId=9,StudentID=531366,TermID=4,TermName="Fall 2018", DegreePlanID=3},
+                        new StudentTerm{StudentTermId=10,StudentID=531366,TermID=5,TermName="Spring 2019", DegreePlanID=3},
+                        new StudentTerm{StudentTermId=11,StudentID=533710,TermID=1,TermName="Fall 2017", DegreePlanID=5},
+                        new StudentTerm{StudentTermId=12,StudentID=533710,TermID=2,TermName="Spring 2018", DegreePlanID=5},
+                        new StudentTerm{StudentTermId=13,StudentID=533710,TermID=3,TermName="Summer 2018", DegreePlanID=5},
+                        new StudentTerm{StudentTermId=14,StudentID=533710,TermID=4,TermName="Fall 2018", DegreePlanID=5},
+                        new StudentTerm{StudentTermId=15,StudentID=533710,TermID=5,TermName="Spring 2019", DegreePlanID=5},
+                        new StudentTerm{StudentTermId=16,StudentID=533626,TermID=1,TermName="Fall 2017", DegreePlanID=7},
+                        new StudentTerm{StudentTermId=17,StudentID=533626,TermID=2,TermName="Spring 2018", DegreePlanID=7},
+                        new StudentTerm{StudentTermId=18,StudentID=533626,TermID=3,TermName="Summer 2018", DegreePlanID=7},
+                        new StudentTerm{StudentTermId=19,StudentID=533626,TermID=4,TermName="Fall 2018", DegreePlanID=7},
+                        new StudentTerm{StudentTermId=20,StudentID=533626,TermID=5,TermName="Spring 2019", DegreePlanID=7},
+                        new StudentTerm{StudentTermId=21,StudentID=531383,TermID=1,TermName="Fall 2017", DegreePlanID=9},
+                        new StudentTerm{StudentTermId=22,StudentID=531383,TermID=2,TermName="Spring 2018", DegreePlanID=9},
+                        new StudentTerm{StudentTermId=23,StudentID=531383,TermID=3,TermName="Summer 2018", DegreePlanID=9},
+                        new StudentTerm{StudentTermId=24,StudentID=531383,TermID=4,TermName="Fall 2018", DegreePlanID=9},
+                        new StudentTerm{StudentTermId=25,StudentID=531383,TermID=5,TermName="Spring 2019", DegreePlanID=9},
+
+                };
+                Console.WriteLine($"New studentTerm {team_6.Length} new studentTerm in inserted");
+                foreach (StudentTerm d in team_6)
+                {
+                    context.StudentTerms.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HEREs
+
+
+            
+
+            //This section is for Requirements
+            if (context.Requirements.Any())
+            {
+                Console.WriteLine("Requirement exists.");
+            }
+            else
+            {
+                var team_6 = new Requirement[]
+                {
+
+                    new Requirement{ RequirementID= 460,RequirementAbbrev= "DB",RequirementName = "44-460 Database", DegreeID=2, StudentTermId=1},
+                    new Requirement{ RequirementID= 542,RequirementAbbrev= "OOP",RequirementName = "44-542 OOP", DegreeID=2, StudentTermId=1},
+                    new Requirement{ RequirementID= 563,RequirementAbbrev= "Web apps",RequirementName = "44-563 Web apps", DegreeID=2, StudentTermId=1},
+                    new Requirement{ RequirementID= 560,RequirementAbbrev= "ADB",RequirementName = "44-560 ADB", DegreeID=2, StudentTermId=1},
+                    new Requirement{ RequirementID= 555,RequirementAbbrev= "NS",RequirementName = "44-555 Network Security", DegreeID=2, StudentTermId=2},
+                    new Requirement{ RequirementID= 618,RequirementAbbrev= "PM",RequirementName = "44-618 PM", DegreeID=2, StudentTermId=2},
+                    new Requirement{ RequirementID= 1,RequirementAbbrev= "Mobile",RequirementName = "44-643 or 44-644", DegreeID=2, StudentTermId=2},
+                    new Requirement{ RequirementID= 664,RequirementAbbrev= "UXD",RequirementName = "44-664 UXD", DegreeID=2, StudentTermId=3},
+                    new Requirement{ RequirementID= 10,RequirementAbbrev= "E1",RequirementName = "Elective 1", DegreeID=2, StudentTermId=3},
+                    new Requirement{ RequirementID= 20,RequirementAbbrev= "E2",RequirementName = "Elective 2", DegreeID=2, StudentTermId=3},
+                    new Requirement{ RequirementID= 691,RequirementAbbrev= "GDP1",RequirementName = "GDP1", DegreeID=2, StudentTermId=4},
+                    new Requirement{ RequirementID= 692,RequirementAbbrev= "GDP2",RequirementName = "GDP2", DegreeID=2, StudentTermId=4}
+
+                   
+
+                };
+                Console.WriteLine($"New requirement {team_6.Length} new requirement in inserted");
+                foreach (Requirement d in team_6)
+                {
+                    context.Requirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            //This section is for DegreeRequirement
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("DegreeRequirement exists.");
+            }
+            else
+            {
+                var team_6 = new DegreeRequirement[]
+                {
+
+                    new DegreeRequirement{DegreeRequirementID=1,StudentTermID=1,RequirementID=460},
+                    new DegreeRequirement{DegreeRequirementID=2,StudentTermID=1,RequirementID=542},
+                    new DegreeRequirement{DegreeRequirementID=3,StudentTermID=1,RequirementID=563},
+                    new DegreeRequirement{DegreeRequirementID=4,StudentTermID=1,RequirementID=560},
+                    new DegreeRequirement{DegreeRequirementID=5,StudentTermID=1,RequirementID=555},
+                    new DegreeRequirement{DegreeRequirementID=6,StudentTermID=1,RequirementID=618},
+                    new DegreeRequirement{DegreeRequirementID=7,StudentTermID=1,RequirementID=1},
+                    new DegreeRequirement{DegreeRequirementID=8,StudentTermID=1,RequirementID=664},
+                    new DegreeRequirement{DegreeRequirementID=9,StudentTermID=1,RequirementID=10},
+                    new DegreeRequirement{DegreeRequirementID=10,StudentTermID=1,RequirementID=20},
+                    new DegreeRequirement{DegreeRequirementID=11,StudentTermID=1,RequirementID=691},
+                    new DegreeRequirement{DegreeRequirementID=12,StudentTermID=1,RequirementID=692},
+
+
+
+
+                };
+                Console.WriteLine($"New degreeRequirement {team_6.Length} new degreeRequirement in inserted");
+                foreach (DegreeRequirement d in team_6)
+                {
+                    context.DegreeRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //END HERE
+
+            
+
+            
+
 
             //This section is for DegreePlanTermRequirement
             if (context.DegreePlanTermRequirements.Any())

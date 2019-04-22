@@ -111,17 +111,18 @@ namespace MVC_Plan.Controllers
         // GET: DegreePlans/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) { return NotFound(); }
+            var studentDegreePlan = await _context.DegreePlans
+                .Include(p => p.Degree).ThenInclude(pd => pd.Requirements)
+                .Include(p => p.Student)
+                .Include(p => p.StudentTerms).ThenInclude(pt => pt.DegreeRequirements)
+                .SingleOrDefaultAsync(m => m.DegreePlanID == id);
 
-            var degreePlan = await _context.DegreePlans.FindAsync(id);
-            if (degreePlan == null)
-            {
-                return NotFound();
-            }
-            return View(degreePlan);
+            if (studentDegreePlan == null) { return NotFound(); }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbbrev", studentDegreePlan.DegreeID);
+           // ViewData["DegreeStatusId"] = new SelectList(_context.DegreeStatuses, "DegreeStatusId", "Status", studentDegreePlan.DegreeStatusId);
+            ViewData["StudentID"] = new SelectList(_context.Students, "StudentId", "GivenName", studentDegreePlan.StudentID);
+            return View(studentDegreePlan);
         }
 
         // POST: DegreePlans/Edit/5

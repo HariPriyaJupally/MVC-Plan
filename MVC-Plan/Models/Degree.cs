@@ -18,5 +18,9 @@ namespace MVC_Plan.Models
         [MaxLength(40)]
         public string DegreeName { get; set; }
         public bool Done { get; set; }
+
+        public ICollection<Requirement> Requirements { get; set;}
+
+        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
     }
 }
