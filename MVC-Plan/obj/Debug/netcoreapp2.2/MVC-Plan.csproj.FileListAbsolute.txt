@@ -266,6 +266,7 @@ C:\Users\S533626\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-P
 C:\Users\S533626\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.RazorTargetAssemblyInfo.cs
 C:\Users\S533626\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.Views.pdb
 C:\Users\S533626\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\MVC-Plan.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\bin\Debug\netcoreapp2.2\MVC-Plan.deps.json
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\bin\Debug\netcoreapp2.2\MVC-Plan.runtimeconfig.json
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\bin\Debug\netcoreapp2.2\MVC-Plan.runtimeconfig.dev.json
@@ -333,3 +334,5 @@ C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Details.g.cshtml.cs
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Edit.g.cshtml.cs
 C:\Users\s531383\Documents\44663\MVC-Plan\MVC-Plan\obj\Debug\netcoreapp2.2\Razor\Views\DegreeRequirements\Index.g.cshtml.cs
+=======
+>>>>>>> 20232f3ff57e063f0bee627db540db24172686b8
