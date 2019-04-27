@@ -38,3 +38,4 @@ C:\Users\s531383\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcor
 C:\Users\s531383\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.AssemblyInfo.cs
 C:\Users\s531383\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.dll
 C:\Users\s531383\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.pdb
+C:\Users\s531383\Documents\44663\MVC-Plan\tests\FunctionalTests\obj\Debug\netcoreapp2.2\FunctionalTests.csprojAssemblyReference.cache
