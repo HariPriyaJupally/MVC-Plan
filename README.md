@@ -1,6 +1,6 @@
 ## Developers List:
-* Bharadwaj Dasari
 * Hari Priya Jupally
+* Bharadwaj Dasari
 * Durga Susmitha Kotyada
 * Hyndavi Musipatla
 * Vyshnavi Yalamareddy
